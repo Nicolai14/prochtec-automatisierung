@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Automatisierungs-Check · Beispiel Steuerkanzlei</title>
+<style>
+  :root{--ink:#1a2332;--mut:#5a6678;--acc:#0d6e5f;--bg:#f7f6f2;--card:#fffdf9;--line:#e3ded4}
+  *{box-sizing:border-box;margin:0}
+  body{font:16px/1.6 system-ui,sans-serif;color:var(--ink);background:var(--bg);padding:40px 20px}
+  main{max-width:720px;margin:0 auto}
+  header{border-bottom:2px solid var(--ink);padding-bottom:24px;margin-bottom:32px}
+  .kicker{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);font-weight:600}
+  h1{font-size:30px;line-height:1.2;margin-top:8px}
+  .meta{color:var(--mut);margin-top:8px;font-size:14px}
+  .summary{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--acc);padding:20px 24px;border-radius:6px;margin-bottom:36px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:24px;margin-bottom:20px}
+  .card h2{font-size:19px;margin-bottom:12px}
+  .card .num{display:inline-block;width:28px;height:28px;border-radius:50%;background:var(--acc);color:#fff;text-align:center;line-height:28px;font-size:14px;margin-right:10px}
+  .row{margin:10px 0}
+  .label{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);font-weight:600}
+  .facts{display:flex;gap:24px;margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);font-size:14px}
+  footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+</style></head><body><main>
+<header>
+  <div class="kicker">Automatisierungs-Check</div>
+  <h1>Beispiel Steuerkanzlei</h1>
+  <div class="meta">https://beispiel-kanzlei.de · Erstellt am 12.6.2026</div>
+</header>
+<div class="summary">Steuerkanzleien wie die Beispiel Steuerkanzlei arbeiten branchentypisch mit hohem manuellem Aufwand in der Mandantenkommunikation, Belegerfassung und Fristenverwaltung. Über 90 % der deutschen Kanzleien nutzen DATEV als Basis, schöpfen dessen Automatisierungspotenziale jedoch häufig nicht vollständig aus. Gezielte Automatisierungen in wiederkehrenden Prozessen können Mitarbeiterzeit spürbar entlasten und Fehlerquellen reduzieren.</div>
+
+<div class="card">
+  <h2><span class="num">1</span>Automatisierter Belegeingang &amp; Vorerfassung</h2>
+  <div class="row"><div class="label">Heute</div>In Betrieben wie Ihrem werden eingehende Belege von Mandanten oft per E-Mail, Post oder Papierordner angeliefert und anschließend manuell sortiert, benannt und in DATEV oder vergleichbare Systeme übertragen, das bindet täglich erhebliche Mitarbeiterkapazität.</div>
+  <div class="row"><div class="label">Automatisiert</div>Durch den Einsatz von Tools wie DATEV Unternehmen online, Candis oder Belege-OCR-Lösungen (z. B. Docuware) können Belege automatisch per Mandantenportal eingespielt, per KI-gestützter Texterkennung klassifiziert und vorgebucht werden. Eine Schnittstelle zu DATEV überträgt die Daten dann ohne manuelle Zwischenschritte direkt in die Buchhaltung.</div>
+  <div class="facts"><div><strong>Ersparnis:</strong> ca. 3-6 Stunden pro Woche</div><div><strong>Aufwand:</strong> mittel</div></div>
+</div>
+<div class="card">
+  <h2><span class="num">2</span>Fristenmanagement &amp; automatische Erinnerungen</h2>
+  <div class="row"><div class="label">Heute</div>Steuerliche Fristen (Abgabe von Erklärungen, Fristverlängerungen, Zahlungstermine) werden in vielen Kanzleien noch manuell in Tabellen oder Kalender eingetragen und Erinnerungen per Hand versandt, was bei wachsendem Mandantenstamm fehleranfällig wird.</div>
+  <div class="row"><div class="label">Automatisiert</div>Kanzleisoftware wie DATEV Kanzlei-Rechnungswesen, Stotax Kanzlei oder spezialisierte Tools wie Kanzlei-Workflow ermöglichen eine zentrale Fristenverwaltung mit automatischen E-Mail- oder SMS-Erinnerungen an Mitarbeitende und Mandanten. Regeln lassen sich einmalig hinterlegen und laufen danach vollständig automatisiert.</div>
+  <div class="facts"><div><strong>Ersparnis:</strong> ca. 2-4 Stunden pro Woche</div><div><strong>Aufwand:</strong> gering</div></div>
+</div>
+<div class="card">
+  <h2><span class="num">3</span>Standardisierte Mandantenkommunikation per Vorlagen &amp; KI</h2>
+  <div class="row"><div class="label">Heute</div>In Betrieben wie Ihrem werden wiederkehrende Schreiben, etwa Anforderungen fehlender Unterlagen, Übermittlungsbestätigungen oder Erläuterungen zu Steuerbescheiden, häufig individuell und manuell verfasst, obwohl sich die Inhalte stark ähneln.</div>
+  <div class="row"><div class="label">Automatisiert</div>Mit einer Vorlagenbibliothek in der Kanzleisoftware (z. B. DATEV-Dokumentenmanagement oder Stotax) kombiniert mit ChatGPT-basierten Assistenten lassen sich Standardschreiben per Klick mandantenspezifisch befüllen und versenden. KI-Tools können dabei Entwürfe auf Basis weniger Stichworte erstellen, die nur noch kurz geprüft werden müssen.</div>
+  <div class="facts"><div><strong>Ersparnis:</strong> ca. 2-3 Stunden pro Woche</div><div><strong>Aufwand:</strong> gering</div></div>
+</div>
+<footer>Unverbindliche Ersteinschätzung auf Basis öffentlich verfügbarer Informationen.<br>Umsetzung als Festpreis-Paket möglich, Verbindung Ihrer Tools über 1.000+ geprüfte Konnektoren.</footer>
+</main></body></html>
