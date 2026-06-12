@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prochtec Automatisierung · Festpreis-Automatisierungen für kleine Unternehmen</title>
+<meta name="description" content="Wiederkehrende Büroarbeit automatisieren: Anfragen, Berichte, Datenpflege. Festpreis, in einer Woche einsatzbereit, Daten bleiben in Deutschland.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;0,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6f4ef;
+  --card:#fdfcf9;
+  --ink:#232b36;
+  --mut:#4d5765;
+  --acc:#0c5f53;
+  --acc-ink:#0a4a41;
+  --line:#dcd6c9;
+  --ease:cubic-bezier(0.23,1,0.32,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:"Schibsted Grotesk",system-ui,sans-serif;background:var(--paper);color:var(--ink);font-size:17px;line-height:1.6}
+main{max-width:1060px;margin:0 auto;padding:0 24px}
+h1,h2,h3{line-height:1.15;text-wrap:balance;font-weight:700}
+p{text-wrap:pretty}
+a{color:var(--acc-ink)}
+
+nav{display:flex;justify-content:space-between;align-items:center;max-width:1060px;margin:0 auto;padding:20px 24px;height:72px}
+.wordmark{font-weight:800;font-size:19px;letter-spacing:-0.01em;color:var(--ink);text-decoration:none}
+.wordmark span{color:var(--acc)}
+.nav-cta{font-size:15px;font-weight:500;text-decoration:none;color:var(--ink);border:1.5px solid var(--ink);border-radius:8px;padding:9px 18px;transition:transform 150ms var(--ease),background 150ms var(--ease),color 150ms var(--ease)}
+.nav-cta:hover{background:var(--ink);color:var(--paper)}
+.nav-cta:active{transform:scale(0.97)}
+
+.hero{padding:72px 0 64px;max-width:760px}
+.hero h1{font-size:clamp(34px,5.2vw,54px);letter-spacing:-0.02em}
+.hero p{font-size:19px;color:var(--mut);margin:20px 0 32px;max-width:34em}
+.btn{display:inline-block;background:var(--acc);color:#fdfcf9;font-weight:700;font-size:17px;text-decoration:none;padding:14px 26px;border-radius:8px;transition:transform 150ms var(--ease),background 150ms var(--ease)}
+.btn:hover{background:var(--acc-ink)}
+.btn:active{transform:scale(0.97)}
+.btn-quiet{display:inline-block;margin-left:18px;font-size:16px;font-weight:500;color:var(--acc-ink)}
+
+section{padding:56px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(26px,3.4vw,34px);letter-spacing:-0.015em;margin-bottom:14px}
+.lead{color:var(--mut);max-width:38em;margin-bottom:36px}
+
+.beispiele{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
+.beispiel{padding:28px;border-bottom:1px solid var(--line)}
+@media (min-width:700px){
+  .beispiel:nth-child(odd){border-right:1px solid var(--line)}
+  .beispiel:nth-last-child(-n+2){border-bottom:0}
+}
+@media (max-width:699.9px){
+  .beispiel:last-child{border-bottom:0}
+}
+.beispiel h3{font-size:18px;margin-bottom:8px}
+.beispiel p{font-size:15.5px;color:var(--mut)}
+.beispiel .zeit{display:block;margin-top:14px;font-size:14px;font-weight:700;color:var(--acc-ink)}
+
+ol.ablauf{list-style:none;counter-reset:s;max-width:640px}
+ol.ablauf li{counter-increment:s;display:flex;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
+ol.ablauf li:last-child{border-bottom:0}
+ol.ablauf li::before{content:counter(s);flex:0 0 38px;height:38px;border-radius:50%;background:var(--ink);color:var(--paper);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:16px}
+ol.ablauf h3{font-size:17.5px;margin-bottom:4px}
+ol.ablauf p{font-size:15.5px;color:var(--mut)}
+
+.preise{border:1px solid var(--line);border-radius:12px;background:var(--card);overflow:hidden}
+.preis-zeile{display:grid;grid-template-columns:1fr 2fr auto;gap:24px;align-items:center;padding:26px 28px;border-bottom:1px solid var(--line)}
+.preis-zeile:last-child{border-bottom:0}
+.preis-zeile.empfohlen{background:#eef3ee}
+.preis-zeile h3{font-size:18px}
+.preis-zeile .tag{display:inline-block;margin-left:10px;font-size:12.5px;font-weight:700;color:var(--acc-ink);border:1px solid var(--acc);border-radius:99px;padding:2px 10px;vertical-align:2px}
+.preis-zeile p{font-size:15px;color:var(--mut)}
+.preis-zeile .preis{font-size:21px;font-weight:800;white-space:nowrap}
+.preis-zeile .preis small{display:block;font-size:13px;font-weight:500;color:var(--mut)}
+@media (max-width:720px){.preis-zeile{grid-template-columns:1fr;gap:8px}}
+
+.gruende{max-width:680px}
+.gruende li{margin:0 0 18px 0;list-style:none;padding-left:30px;position:relative;color:var(--mut);font-size:16px}
+.gruende li::before{content:"";position:absolute;left:0;top:7px;width:14px;height:14px;border-radius:3px;background:var(--acc)}
+.gruende li strong{color:var(--ink)}
+
+details{border-bottom:1px solid var(--line);max-width:680px}
+details summary{cursor:pointer;padding:18px 0;font-weight:700;font-size:16.5px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+details summary::after{content:"+";font-size:22px;font-weight:400;color:var(--acc-ink)}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 0 18px;color:var(--mut);font-size:15.5px;max-width:60ch}
+summary:focus-visible{outline:2px solid var(--acc);outline-offset:4px;border-radius:4px}
+
+.kontakt{background:var(--ink);color:#f2efe8;border-radius:14px;padding:48px 40px;margin:64px 0;border-top:0}
+.kontakt h2{color:#fdfcf9}
+.kontakt p{color:#bcc4cf;max-width:36em;margin:12px 0 28px}
+.kontakt .btn{background:#fdfcf9;color:var(--ink)}
+.kontakt .btn:hover{background:#e8e4da}
+.kontakt .mail{color:#e8e4da;font-size:15px;margin-top:18px}
+.kontakt .mail a{color:#e8e4da}
+
+footer{max-width:1060px;margin:0 auto;padding:28px 24px 48px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--mut);font-size:14.5px}
+footer a{color:var(--mut)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="wordmark" href="/">prochtec<span>.</span> automatisierung</a>
+  <a class="nav-cta" href="#kontakt">Check anfordern</a>
+</nav>
+
+<main>
+
+<div class="hero">
+  <h1>Büroarbeit, die sich wiederholt, gehört einer Software übertragen.</h1>
+  <p>Automatisierungen zum Festpreis: Anfragen sortieren sich, Berichte schreiben sich, Daten pflegen sich.</p>
+  <a class="btn" href="#kontakt">Kostenlosen Automatisierungs-Check anfordern</a>
+  <a class="btn-quiet" href="beispiel-report.html">Beispiel-Report ansehen</a>
+</div>
+
+<section id="beispiele">
+  <h2>Was sich automatisieren lässt</h2>
+  <p class="lead">Vier Beispiele aus typischen kleinen Betrieben. Ihr Fall sieht anders aus? Genau dafür ist der kostenlose Check da.</p>
+  <div class="beispiele">
+    <div class="beispiel">
+      <h3>Anfragen-Eingang mit Vorqualifizierung</h3>
+      <p>Neue Anfragen aus Website, E-Mail und Portalen landen sortiert und mit allen Eckdaten in Ihrem CRM. Der Interessent bekommt sofort eine persönliche Eingangsbestätigung.</p>
+      <span class="zeit">spart 2 bis 4 Stunden pro Woche</span>
+    </div>
+    <div class="beispiel">
+      <h3>Angebots- und Rechnungsdaten übertragen</h3>
+      <p>Daten aus Aufträgen wandern ohne Abtippen in Ihre Buchhaltung oder Tabellen. Tippfehler und vergessene Positionen entfallen.</p>
+      <span class="zeit">spart 1 bis 3 Stunden pro Woche</span>
+    </div>
+    <div class="beispiel">
+      <h3>Wochenbericht ohne Schreibarbeit</h3>
+      <p>Zahlen aus Ihren Systemen werden jeden Montag automatisch zu einem lesbaren Bericht zusammengefasst und an Sie oder Ihr Team geschickt.</p>
+      <span class="zeit">spart 1 bis 2 Stunden pro Woche</span>
+    </div>
+    <div class="beispiel">
+      <h3>Posteingang-Triage mit KI</h3>
+      <p>Ein KI-Agent liest eingehende Mails, beantwortet Routinefragen mit Ihren Vorgaben und legt nur die Fälle vor, die wirklich Ihre Entscheidung brauchen.</p>
+      <span class="zeit">spart 3 bis 5 Stunden pro Woche</span>
+    </div>
+  </div>
+</section>
+
+<section id="ablauf">
+  <h2>So läuft es ab</h2>
+  <ol class="ablauf">
+    <li>
+      <div>
+        <h3>Kostenloser Automatisierungs-Check</h3>
+        <p>Sie beschreiben kurz Ihren Betrieb und Ihre Werkzeuge. Sie erhalten innerhalb von 48 Stunden einen Report mit drei konkreten Vorschlägen samt Zeitersparnis-Schätzung. Unverbindlich.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>Festpreis-Angebot</h3>
+        <p>Sie wählen einen Vorschlag, wir nennen einen festen Preis und einen festen Liefertermin. Keine Stundensätze, keine Überraschungen.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>Einrichtung und Test mit Ihren echten Daten</h3>
+        <p>Ihre Konten verbinden Sie selbst über einen gesicherten Freigabe-Link, Passwörter geben Sie nie aus der Hand. Bezahlt wird, wenn alles nachweislich läuft.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>Übergabe mit Dokumentation</h3>
+        <p>Sie bekommen eine verständliche Dokumentation und 14 Tage kostenlose Anpassungen. Auf Wunsch übernehmen wir den laufenden Betrieb.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section id="preise">
+  <h2>Pakete und Preise</h2>
+  <p class="lead">Jedes Paket hat einen festen Preis und einen festen Lieferumfang. Die Preise verstehen sich zzgl. USt.</p>
+  <div class="preise">
+    <div class="preis-zeile">
+      <h3>Automatisierungs-Check</h3>
+      <p>Analyse Ihrer Abläufe und Werkzeuge, Report mit drei priorisierten Automatisierungsvorschlägen inkl. Ersparnis-Schätzung.</p>
+      <div class="preis">0 €<small>unverbindlich</small></div>
+    </div>
+    <div class="preis-zeile empfohlen">
+      <h3>Workflow-Setup<span class="tag">meistgewählt</span></h3>
+      <p>Eine Automatisierung, zwei bis drei verbundene Programme, getestet mit Ihren echten Daten, dokumentiert, 14 Tage Anpassungen inklusive.</p>
+      <div class="preis">ab 349 €<small>einmalig</small></div>
+    </div>
+    <div class="preis-zeile">
+      <h3>KI-Agent</h3>
+      <p>Ein Agent, der mitliest, vorsortiert und formuliert: Posteingang-Triage, Recherche, Berichtswesen. Mit Freigabe-Stufen, die Sie festlegen.</p>
+      <div class="preis">ab 899 €<small>einmalig</small></div>
+    </div>
+    <div class="preis-zeile">
+      <h3>Betrieb &amp; Wartung</h3>
+      <p>Überwachung, Fehlerbehebung und kleine Anpassungen. Ihre Automatisierung läuft auf Servern in Deutschland.</p>
+      <div class="preis">ab 49 €<small>pro Monat, monatlich kündbar</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="warum">
+  <h2>Warum Prochtec</h2>
+  <ul class="gruende">
+    <li><strong>Über 1.000 anbindbare Programme.</strong> CRM, E-Mail, Kalender, Tabellen, Buchhaltung, Shops: wir verbinden, was Sie bereits nutzen, statt neue Software einzuführen.</li>
+    <li><strong>Passwörter bleiben bei Ihnen.</strong> Konten verbinden Sie selbst über geprüfte Freigabe-Links (OAuth). Wir sehen Ihre Zugangsdaten zu keinem Zeitpunkt.</li>
+    <li><strong>Daten in Deutschland.</strong> Betrieb auf eigenen Servern in deutschen Rechenzentren, keine Weitergabe an Dritte.</li>
+    <li><strong>Festpreis statt Stundensatz.</strong> Sie kennen die Kosten, bevor wir anfangen. Bezahlt wird nach erfolgreichem Test mit Ihren echten Daten.</li>
+  </ul>
+</section>
+
+<section id="faq">
+  <h2>Häufige Fragen</h2>
+  <details>
+    <summary>Brauche ich technisches Vorwissen?</summary>
+    <p>Nein. Sie beschreiben Ihren Ablauf in normalen Worten. Die Einrichtung, Tests und Dokumentation übernehmen wir, die Übergabe ist für Nicht-Techniker geschrieben.</p>
+  </details>
+  <details>
+    <summary>Welche Programme können angebunden werden?</summary>
+    <p>Über 1.000, darunter Gmail und Outlook, Google Tabellen und Excel, HubSpot, Pipedrive, Lexoffice-Schnittstellen, Slack, Teams, Shopify und viele Branchenlösungen. Im Check prüfen wir Ihre konkrete Kombination.</p>
+  </details>
+  <details>
+    <summary>Was passiert mit meinen Daten?</summary>
+    <p>Verarbeitung auf Servern in Deutschland. Konten verbinden Sie selbst per Freigabe-Link und können den Zugriff jederzeit widerrufen. Auf Wunsch schließen wir einen Auftragsverarbeitungsvertrag.</p>
+  </details>
+  <details>
+    <summary>Wie schnell ist eine Automatisierung einsatzbereit?</summary>
+    <p>Ein Workflow-Setup liefern wir in der Regel innerhalb von einer Woche nach Beauftragung, ein KI-Agent braucht ein bis zwei Wochen.</p>
+  </details>
+  <details>
+    <summary>Was, wenn es nicht funktioniert?</summary>
+    <p>Sie testen mit echten Daten, bevor Sie bezahlen. Läuft die Automatisierung nicht wie vereinbart, zahlen Sie nichts.</p>
+  </details>
+</section>
+
+<div class="kontakt" id="kontakt">
+  <h2>Starten Sie mit dem kostenlosen Check.</h2>
+  <p>Schreiben Sie zwei, drei Sätze zu Ihrem Betrieb und den Programmen, mit denen Sie arbeiten. Sie erhalten innerhalb von 48 Stunden Ihren persönlichen Automatisierungs-Report.</p>
+  <a class="btn" href="mailto:kontakt@prochtec.de?subject=Automatisierungs-Check&body=Unser%20Betrieb%3A%0AUnsere%20Programme%3A%0AWas%20zu%20viel%20Zeit%20kostet%3A">Check per E-Mail anfordern</a>
+  <p class="mail">Oder direkt an: <a href="mailto:kontakt@prochtec.de">kontakt@prochtec.de</a></p>
+</div>
+
+</main>
+
+<footer>
+  <div>Prochtec Automatisierung</div>
+  <div><a href="impressum.html">Impressum &amp; Datenschutz</a></div>
+</footer>
+
+</body>
+</html>
