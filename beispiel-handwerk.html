@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Automatisierungs-Check · Beispiel Handwerksbetrieb (SHK)</title>
+<style>
+  :root{--ink:#1a2332;--mut:#5a6678;--acc:#0d6e5f;--bg:#f7f6f2;--card:#fffdf9;--line:#e3ded4}
+  *{box-sizing:border-box;margin:0}
+  body{font:16px/1.6 system-ui,sans-serif;color:var(--ink);background:var(--bg);padding:40px 20px}
+  main{max-width:720px;margin:0 auto}
+  header{border-bottom:2px solid var(--ink);padding-bottom:24px;margin-bottom:32px}
+  .kicker{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);font-weight:600}
+  h1{font-size:30px;line-height:1.2;margin-top:8px}
+  .meta{color:var(--mut);margin-top:8px;font-size:14px}
+  .summary{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--acc);padding:20px 24px;border-radius:6px;margin-bottom:36px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:24px;margin-bottom:20px}
+  .card h2{font-size:19px;margin-bottom:12px}
+  .card .num{display:inline-block;width:28px;height:28px;border-radius:50%;background:var(--acc);color:#fff;text-align:center;line-height:28px;font-size:14px;margin-right:10px}
+  .row{margin:10px 0}
+  .label{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);font-weight:600}
+  .facts{display:flex;gap:24px;margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);font-size:14px}
+  footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+</style></head><body><main>
+<header>
+  <div class="kicker">Automatisierungs-Check</div>
+  <h1>Beispiel Handwerksbetrieb (SHK)</h1>
+  <div class="meta">https://beispiel-shk.de · Erstellt am 12.6.2026</div>
+</header>
+<div class="summary">Das SHK-Handwerk steht branchenweit vor großen Digitalisierungsherausforderungen: Viele Betriebe arbeiten noch mit papierbasierten Prozessen bei Auftragsabwicklung, Wartungsplanung und Kundenkommunikation. In Betrieben wie Beispiel Handwerksbetrieb (SHK) liegen die größten Automatisierungspotenziale typischerweise in der Disposition, der Angebots- und Rechnungsstellung sowie im Kundenservice, Bereiche, die mit vergleichsweise geringem Aufwand erheblich effizienter gestaltet werden können.</div>
+
+<div class="card">
+  <h2><span class="num">1</span>Digitale Angebots- und Rechnungsstellung</h2>
+  <div class="row"><div class="label">Heute</div>In vielen SHK-Betrieben werden Angebote und Rechnungen manuell erstellt, oft auf Basis handschriftlicher Aufmaße vom Einsatzort, die anschließend im Büro übertragen werden müssen. Das kostet mehrere Stunden pro Woche und ist fehleranfällig.</div>
+  <div class="row"><div class="label">Automatisiert</div>Mit einer branchenspezifischen SHK-Software (z. B. mfr®, pds oder OOURS) erfassen Monteure Aufmaße und Materialien direkt per App vor Ort. Angebote und Rechnungen werden automatisch auf Basis hinterlegter Preislisten generiert und per E-Mail versandt, ohne doppelte Dateneingabe im Büro.</div>
+  <div class="facts"><div><strong>Ersparnis:</strong> ca. 3-5 Stunden pro Woche</div><div><strong>Aufwand:</strong> mittel</div></div>
+</div>
+<div class="card">
+  <h2><span class="num">2</span>Automatisierte Wartungserinnerungen und Terminplanung</h2>
+  <div class="row"><div class="label">Heute</div>Wartungsverträge für Heizungsanlagen oder Klimaanlagen erfordern regelmäßige Kundenkontakte. In Betrieben wie Ihrem werden Erinnerungen und Terminabstimmungen häufig noch manuell per Telefon oder E-Mail organisiert, was den Büroalltag belastet.</div>
+  <div class="row"><div class="label">Automatisiert</div>Eine Handwerkersoftware mit Wartungsmodul (z. B. mfr® oder pds) versendet automatisch Erinnerungs-E-Mails oder SMS an Kunden, sobald ein Wartungsintervall ansteht. Kunden können darüber direkt einen Wunschtermin zurückmelden, der automatisch in den digitalen Kalender des Disponenten einfließt.</div>
+  <div class="facts"><div><strong>Ersparnis:</strong> ca. 2-4 Stunden pro Woche</div><div><strong>Aufwand:</strong> mittel</div></div>
+</div>
+<div class="card">
+  <h2><span class="num">3</span>Automatische Eingangsanfragen-Bearbeitung per Website-Formular mit E-Mail-Weiterleitung</h2>
+  <div class="row"><div class="label">Heute</div>Kundenanfragen über die Website (beispiel-shk.de) landen häufig als formlose E-Mails im Postfach und müssen manuell gesichtet, priorisiert und beantwortet werden. Dabei gehen Anfragen im Tagesgeschäft leicht unter.</div>
+  <div class="row"><div class="label">Automatisiert</div>Ein strukturiertes Kontaktformular (z. B. über Typeform oder ein WordPress-Plugin) fragt gezielt Angaben wie Anliegen, Adresse und Wunschtermin ab. Per Automatisierung (z. B. Make.com oder Zapier) wird die Anfrage sofort kategorisiert, eine automatische Eingangsbestätigung an den Kunden gesendet und die Anfrage als priorisierte Aufgabe ins CRM oder die Handwerkersoftware übertragen.</div>
+  <div class="facts"><div><strong>Ersparnis:</strong> ca. 1-2 Stunden pro Woche</div><div><strong>Aufwand:</strong> gering</div></div>
+</div>
+<footer>Unverbindliche Ersteinschätzung auf Basis öffentlich verfügbarer Informationen.<br>Umsetzung als Festpreis-Paket möglich, Verbindung Ihrer Tools über 1.000+ geprüfte Konnektoren.</footer>
+</main></body></html>
