@@ -379,6 +379,99 @@ footer {
 }
 footer a { color: var(--mut) }
 
+/* ── WORKFLOW VISUAL ── */
+.wf-section { padding: 64px 0; border-top: 1px solid var(--line) }
+.wf-section h2 { font-size: clamp(26px, 3.4vw, 36px); letter-spacing: -0.02em; margin-bottom: 10px }
+.wf-intro { color: var(--mut); font-size: 16.5px; margin-bottom: 36px; max-width: 42em }
+.wf-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 36px 40px 24px;
+}
+.wf-scroll { overflow-x: auto; padding-bottom: 4px }
+.wf-flow {
+  display: flex;
+  align-items: flex-start;
+  min-width: 540px;
+}
+.wf-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 108px;
+  flex-shrink: 0;
+}
+.wf-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.wf-icon img { width: 26px; height: 26px; display: block }
+.wf-icon.ki {
+  background: var(--acc);
+  border-color: var(--acc);
+  color: #fdfcf9;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.wf-node-title { font-size: 12.5px; font-weight: 700; color: var(--ink); line-height: 1.35; margin-bottom: 3px }
+.wf-node-sub   { font-size: 11.5px; color: var(--mut); line-height: 1.3 }
+.wf-conn {
+  flex: 1;
+  min-width: 20px;
+  display: flex;
+  align-items: center;
+  margin-top: 25px; /* vertically centers on the 52px icon */
+}
+.wf-conn::before {
+  content: '';
+  flex: 1;
+  height: 1.5px;
+  background: var(--line);
+}
+.wf-conn::after {
+  content: '';
+  width: 0; height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 7px solid var(--line);
+  flex-shrink: 0;
+}
+.wf-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+}
+.wf-status { color: var(--mut); display: flex; align-items: center; gap: 7px }
+.wf-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--acc);
+  flex-shrink: 0;
+  animation: pulse-dot 2.5s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1 }
+  50% { opacity: 0.35 }
+}
+@media (prefers-reduced-motion: reduce) { .wf-dot { animation: none } }
+.wf-stat { font-weight: 700; color: var(--ink) }
+
 /* ── SCROLL REVEALS ── */
 .reveal {
   opacity: 0;
@@ -452,6 +545,50 @@ footer a { color: var(--mut) }
       <span class="spart-badge">3-5 Std./Woche</span>
     </li>
   </ul>
+</section>
+
+<section class="wf-section reveal">
+  <h2>So sieht ein fertiger Ablauf aus</h2>
+  <p class="wf-intro">Dieses Beispiel läuft bei einem Dienstleistungsbetrieb. Jede neue Anfrage aus E-Mail oder Website durchläuft den Ablauf vollständig automatisch.</p>
+  <div class="wf-card">
+    <div class="wf-scroll">
+      <div class="wf-flow">
+        <div class="wf-node">
+          <div class="wf-icon">
+            <img src="https://cdn.simpleicons.org/gmail/ea4335" alt="Gmail" width="26" height="26">
+          </div>
+          <div class="wf-node-title">Anfrage kommt an</div>
+          <div class="wf-node-sub">Gmail / Outlook</div>
+        </div>
+        <div class="wf-conn" aria-hidden="true"></div>
+        <div class="wf-node">
+          <div class="wf-icon ki">KI</div>
+          <div class="wf-node-title">Analyse &amp; Bewertung</div>
+          <div class="wf-node-sub">Inhalt, Dringlichkeit</div>
+        </div>
+        <div class="wf-conn" aria-hidden="true"></div>
+        <div class="wf-node">
+          <div class="wf-icon">
+            <img src="https://cdn.simpleicons.org/hubspot/ff7a59" alt="HubSpot" width="26" height="26">
+          </div>
+          <div class="wf-node-title">Lead angelegt</div>
+          <div class="wf-node-sub">CRM, alle Felder</div>
+        </div>
+        <div class="wf-conn" aria-hidden="true"></div>
+        <div class="wf-node">
+          <div class="wf-icon">
+            <img src="https://cdn.simpleicons.org/microsoftoutlook/0078d4" alt="Outlook" width="26" height="26">
+          </div>
+          <div class="wf-node-title">Bestätigung raus</div>
+          <div class="wf-node-sub">Persönlich, sofort</div>
+        </div>
+      </div>
+    </div>
+    <div class="wf-footer">
+      <span class="wf-status"><span class="wf-dot" aria-hidden="true"></span> Läuft automatisch bei jeder neuen Anfrage</span>
+      <span class="wf-stat">Eingerichtet in 3 Tagen · Festpreis</span>
+    </div>
+  </div>
 </section>
 
 <section id="ablauf">
