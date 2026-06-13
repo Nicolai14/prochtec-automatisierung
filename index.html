@@ -10,18 +10,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;0,800&display=swap" rel="stylesheet">
 <style>
 :root {
-  --paper: #f6f4ef;
+  --paper: #f5f3ee;
   --card:  #fdfcf9;
-  --ink:   #1e2630;
-  --mut:   #515c6b;
+  --ink:   #1c2530;
+  --mut:   #505b69;
   --acc:   #0c5f53;
   --acc2:  #0a4a41;
-  --ahl:   #e2eeec;
-  --line:  #dbd5c8;
-  --ease:  cubic-bezier(0.23,1,0.32,1);
+  --ahl:   #ddeae8;
+  --line:  #d8d2c6;
+  --ease:  cubic-bezier(0.23, 1, 0.32, 1);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
-html { scroll-behavior: smooth }
+html { scroll-behavior: smooth; overflow-x: hidden }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto } }
 body {
   font-family: "Schibsted Grotesk", system-ui, sans-serif;
@@ -29,9 +29,10 @@ body {
   color: var(--ink);
   font-size: 17px;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 main { max-width: 1060px; margin: 0 auto; padding: 0 24px }
-h1, h2, h3 { line-height: 1.15; text-wrap: balance; font-weight: 700 }
+h1, h2, h3 { line-height: 1.1; text-wrap: balance; font-weight: 800 }
 p { text-wrap: pretty }
 a { color: var(--acc2) }
 
@@ -48,15 +49,15 @@ nav {
 }
 .wordmark {
   font-weight: 800;
-  font-size: 18px;
-  letter-spacing: -0.01em;
+  font-size: 17.5px;
+  letter-spacing: -0.025em;
   color: var(--ink);
   text-decoration: none;
 }
 .wordmark span { color: var(--acc) }
 .nav-cta {
-  font-size: 14.5px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   text-decoration: none;
   color: var(--paper);
   background: var(--ink);
@@ -69,31 +70,31 @@ nav {
 .nav-cta:focus-visible { outline: 2px solid var(--acc); outline-offset: 3px }
 
 /* ── HERO ── */
-.hero { padding: 72px 0 68px; max-width: 820px }
-.trust-strip {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+.hero { padding: 76px 0 72px }
+.trust-line {
+  font-size: 13px;
+  color: var(--mut);
+  letter-spacing: 0.01em;
   margin-bottom: 30px;
 }
-.trust-chip {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--acc2);
-  background: var(--ahl);
-  border-radius: 99px;
-  padding: 5px 13px;
-}
+.tsep { margin: 0 10px; opacity: 0.4 }
 .hero h1 {
-  font-size: clamp(36px, 5.4vw, 60px);
+  font-size: clamp(38px, 5.5vw, 58px);
   letter-spacing: -0.025em;
-  line-height: 1.1;
+}
+.hero-rule {
+  width: 44px;
+  height: 3px;
+  background: var(--acc);
+  margin: 26px 0;
+  border: none;
 }
 .hero p {
-  font-size: 19px;
+  font-size: 18.5px;
   color: var(--mut);
-  margin: 22px 0 36px;
+  margin-bottom: 36px;
   max-width: 34em;
+  line-height: 1.55;
 }
 .cta-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap }
 .btn {
@@ -103,7 +104,7 @@ nav {
   font-weight: 700;
   font-size: 17px;
   text-decoration: none;
-  padding: 14px 26px;
+  padding: 15px 28px;
   border-radius: 6px;
   transition: background 150ms var(--ease), transform 150ms var(--ease);
 }
@@ -111,66 +112,101 @@ nav {
 .btn:active { transform: scale(0.97) }
 .btn:focus-visible { outline: 2px solid var(--acc); outline-offset: 3px }
 .ghost-link {
-  font-size: 15.5px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--mut);
   text-decoration: none;
   border-bottom: 1.5px solid var(--line);
-  transition: border-color 150ms, color 150ms;
+  padding-bottom: 1px;
+  transition: color 150ms, border-color 150ms;
 }
 .ghost-link:hover { color: var(--acc2); border-color: var(--acc2) }
 
-/* ── SECTIONS ── */
-section {
-  padding: 60px 0;
-  border-top: 1px solid var(--line);
+/* ── STATEMENT BAR ── */
+.statement {
+  position: relative;
+  padding: 42px 0;
+  margin-top: 8px;
+  z-index: 0;
 }
+.statement::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: calc(-50vw + 50%);
+  width: 100vw;
+  background: var(--ahl);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  z-index: -1;
+}
+.statement p {
+  font-size: clamp(20px, 2.8vw, 28px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  max-width: 680px;
+  line-height: 1.25;
+}
+.statement p em {
+  font-style: normal;
+  color: var(--acc2);
+}
+
+/* ── SECTIONS ── */
+section { padding: 64px 0; border-top: 1px solid var(--line) }
 section h2 {
-  font-size: clamp(26px, 3.4vw, 36px);
-  letter-spacing: -0.018em;
+  font-size: clamp(28px, 3.8vw, 40px);
+  letter-spacing: -0.02em;
   margin-bottom: 10px;
 }
 .lead {
   color: var(--mut);
   max-width: 42em;
-  margin-bottom: 40px;
+  margin-bottom: 44px;
   font-size: 16.5px;
 }
 
-/* ── BEISPIELE: horizontal row list ── */
+/* ── BEISPIELE: row list ── */
 .beispiel-list { list-style: none }
 .beispiel-row {
   display: grid;
-  grid-template-columns: 48px 1fr auto;
-  gap: 20px 32px;
+  grid-template-columns: 44px 1fr auto;
+  gap: 18px 28px;
   align-items: start;
-  padding: 26px 0;
+  padding: 26px 12px;
+  margin: 0 -12px;
   border-top: 1px solid var(--line);
+  border-radius: 8px;
+  transition: background 160ms var(--ease);
+}
+@media (hover: hover) and (pointer: fine) {
+  .beispiel-row:hover { background: var(--card) }
 }
 .beispiel-num {
-  font-size: 12.5px;
+  font-size: 11.5px;
   font-weight: 800;
   color: var(--acc);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   padding-top: 4px;
+  font-variant-numeric: tabular-nums;
 }
 .beispiel-row h3 { font-size: 17.5px; margin-bottom: 6px }
 .beispiel-row p { font-size: 15.5px; color: var(--mut) }
-.beispiel-spart {
-  font-size: 13px;
+.spart-badge {
+  font-size: 12.5px;
   font-weight: 700;
-  color: var(--acc2);
-  white-space: nowrap;
-  text-align: right;
-  padding-top: 4px;
-  background: var(--ahl);
+  color: #fdfcf9;
+  background: var(--acc);
   border-radius: 6px;
-  padding: 4px 10px;
+  padding: 5px 10px;
+  white-space: nowrap;
   align-self: start;
+  letter-spacing: 0.01em;
 }
-@media (max-width: 640px) {
+@media (max-width: 600px) {
   .beispiel-row { grid-template-columns: 36px 1fr }
-  .beispiel-spart { grid-column: 2; justify-self: start }
+  .spart-badge { grid-column: 2; justify-self: start }
 }
 
 /* ── ABLAUF: numbered steps ── */
@@ -179,28 +215,28 @@ ol.ablauf li {
   counter-increment: s;
   display: flex;
   gap: 24px;
-  padding: 26px 0;
+  padding: 28px 0;
   border-bottom: 1px solid var(--line);
 }
 ol.ablauf li:last-child { border-bottom: 0 }
 ol.ablauf li::before {
   content: counter(s);
-  flex: 0 0 36px;
-  height: 36px;
+  flex: 0 0 38px;
+  height: 38px;
   border-radius: 50%;
   background: var(--acc);
   color: #fdfcf9;
   font-weight: 800;
-  font-size: 14px;
+  font-size: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 ol.ablauf h3 { font-size: 17px; margin-bottom: 5px }
 ol.ablauf p { font-size: 15.5px; color: var(--mut) }
 
-/* ── PREISE ── */
+/* ── PREISE: table ── */
 .preise {
   border: 1px solid var(--line);
   border-radius: 10px;
@@ -209,25 +245,26 @@ ol.ablauf p { font-size: 15.5px; color: var(--mut) }
 }
 .preis-zeile {
   display: grid;
-  grid-template-columns: 220px 1fr 140px;
-  gap: 20px 28px;
+  grid-template-columns: 200px 1fr 150px;
+  gap: 16px 28px;
   align-items: center;
-  padding: 24px 28px;
+  padding: 26px 28px;
   border-bottom: 1px solid var(--line);
 }
 .preis-zeile:last-child { border-bottom: 0 }
-.preis-zeile.empfohlen { background: var(--ahl) }
+.preis-zeile.empfohlen { background: #d5e8e5 }
 .preis-zeile h3 { font-size: 17px }
 .tag {
   display: inline-block;
   margin-left: 8px;
-  font-size: 11.5px;
-  font-weight: 700;
-  color: var(--acc2);
-  background: #c2d8d4;
+  font-size: 11px;
+  font-weight: 800;
+  color: #fdfcf9;
+  background: var(--acc);
   border-radius: 99px;
-  padding: 2px 9px;
+  padding: 3px 9px;
   vertical-align: 2px;
+  letter-spacing: 0.03em;
 }
 .preis-zeile p { font-size: 15px; color: var(--mut) }
 .preis-zahl {
@@ -235,15 +272,16 @@ ol.ablauf p { font-size: 15.5px; color: var(--mut) }
   font-weight: 800;
   white-space: nowrap;
   text-align: right;
+  letter-spacing: -0.01em;
 }
 .preis-zahl small {
   display: block;
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 500;
   color: var(--mut);
   text-align: right;
 }
-@media (max-width: 760px) {
+@media (max-width: 740px) {
   .preis-zeile { grid-template-columns: 1fr; gap: 8px }
   .preis-zahl, .preis-zahl small { text-align: left }
 }
@@ -254,28 +292,22 @@ ol.ablauf p { font-size: 15.5px; color: var(--mut) }
   grid-template-columns: 1fr 1fr;
   border-top: 1px solid var(--line);
 }
-.grund {
-  padding: 28px 0;
-  border-bottom: 1px solid var(--line);
-}
-.grund:nth-child(odd)  { padding-right: 48px; border-right: 1px solid var(--line) }
-.grund:nth-child(even) { padding-left: 48px }
-.grund h3 { font-size: 17px; margin-bottom: 7px }
+.grund { padding: 32px 0; border-bottom: 1px solid var(--line) }
+.grund:nth-child(odd)  { padding-right: 52px; border-right: 1px solid var(--line) }
+.grund:nth-child(even) { padding-left: 52px }
+.grund h3 { font-size: 17.5px; margin-bottom: 8px; letter-spacing: -0.01em }
 .grund p  { font-size: 15.5px; color: var(--mut) }
-@media (max-width: 640px) {
+@media (max-width: 600px) {
   .gruende { grid-template-columns: 1fr }
   .grund:nth-child(odd)  { padding-right: 0; border-right: 0 }
   .grund:nth-child(even) { padding-left: 0 }
 }
 
 /* ── FAQ ── */
-details {
-  border-bottom: 1px solid var(--line);
-  max-width: 680px;
-}
+details { border-bottom: 1px solid var(--line); max-width: 680px }
 details summary {
   cursor: pointer;
-  padding: 18px 0;
+  padding: 20px 0;
   font-weight: 700;
   font-size: 16.5px;
   list-style: none;
@@ -295,21 +327,25 @@ details[open] summary::after { content: "\2212" }
 details p { padding: 0 0 20px; color: var(--mut); font-size: 15.5px; max-width: 60ch }
 summary:focus-visible { outline: 2px solid var(--acc); outline-offset: 4px; border-radius: 4px }
 
-/* ── KONTAKT: accent block ── */
+/* ── KONTAKT: full-bleed outside main ── */
+.kontakt-wrap { background: var(--acc); margin-top: 80px }
 .kontakt {
-  background: var(--acc);
-  border-radius: 12px;
-  padding: 52px 48px;
-  margin: 64px 0;
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 80px 24px 88px;
 }
 .kontakt h2 {
   color: #fdfcf9;
-  font-size: clamp(24px, 2.8vw, 32px);
+  font-size: clamp(30px, 5vw, 56px);
+  letter-spacing: -0.025em;
+  max-width: 720px;
 }
 .kontakt p {
-  color: rgba(253,252,249,0.72);
+  color: rgba(253,252,249,0.65);
   max-width: 36em;
-  margin: 14px 0 32px;
+  margin: 16px 0 36px;
+  font-size: 17.5px;
+  line-height: 1.55;
 }
 .kontakt .btn {
   background: #fdfcf9;
@@ -319,14 +355,14 @@ summary:focus-visible { outline: 2px solid var(--acc); outline-offset: 4px; bord
 .kontakt .btn:hover { background: var(--ahl) }
 .kontakt .mail {
   margin-top: 18px;
-  font-size: 15px;
-  color: rgba(253,252,249,0.55);
+  font-size: 14.5px;
+  color: rgba(253,252,249,0.45);
 }
 .kontakt .mail a {
-  color: rgba(253,252,249,0.8);
+  color: rgba(253,252,249,0.72);
   text-underline-offset: 3px;
 }
-@media (max-width: 600px) { .kontakt { padding: 40px 28px } }
+@media (max-width: 600px) { .kontakt { padding: 56px 24px 64px } }
 
 /* ── FOOTER ── */
 footer {
@@ -338,7 +374,7 @@ footer {
   gap: 16px;
   flex-wrap: wrap;
   color: var(--mut);
-  font-size: 14.5px;
+  font-size: 14px;
   border-top: 1px solid var(--line);
 }
 footer a { color: var(--mut) }
@@ -347,7 +383,7 @@ footer a { color: var(--mut) }
 .reveal {
   opacity: 0;
   transform: translateY(18px);
-  transition: opacity 380ms var(--ease), transform 380ms var(--ease);
+  transition: opacity 400ms var(--ease), transform 400ms var(--ease);
 }
 .reveal.in { opacity: 1; transform: translateY(0) }
 @media (prefers-reduced-motion: reduce) {
@@ -364,18 +400,19 @@ footer a { color: var(--mut) }
 
 <main>
 
-<div class="hero">
-  <div class="trust-strip">
-    <span class="trust-chip">Festpreis vor Beginn</span>
-    <span class="trust-chip">Lieferung in einer Woche</span>
-    <span class="trust-chip">Daten in Deutschland</span>
-  </div>
+<div class="hero reveal">
+  <p class="trust-line">Festpreis vor Beginn <span class="tsep">/</span> Lieferung in einer Woche <span class="tsep">/</span> Daten in Deutschland</p>
   <h1>Büroarbeit, die sich wiederholt, gehört einer Software übertragen.</h1>
+  <div class="hero-rule" aria-hidden="true"></div>
   <p>Automatisierungen zum Festpreis: Anfragen sortieren sich, Berichte schreiben sich, Daten pflegen sich.</p>
   <div class="cta-row">
     <a class="btn" href="#kontakt">Kostenlosen Check anfordern</a>
     <a class="ghost-link" href="beispiel-report.html">Beispiel-Report ansehen</a>
   </div>
+</div>
+
+<div class="statement reveal">
+  <p>Kein Stundensatz. Kein Abo. <em>Bezahlt wird, wenn der neue Ablauf nachweislich läuft.</em></p>
 </div>
 
 <section id="beispiele">
@@ -388,7 +425,7 @@ footer a { color: var(--mut) }
         <h3>Anfragen-Eingang mit Vorqualifizierung</h3>
         <p>Neue Anfragen aus Website, E-Mail und Portalen landen sortiert und mit allen Eckdaten in Ihrem CRM. Der Interessent bekommt sofort eine persönliche Eingangsbestätigung.</p>
       </div>
-      <span class="beispiel-spart">2-4 Std./Woche</span>
+      <span class="spart-badge">2-4 Std./Woche</span>
     </li>
     <li class="beispiel-row reveal">
       <span class="beispiel-num">02</span>
@@ -396,7 +433,7 @@ footer a { color: var(--mut) }
         <h3>Angebots- und Rechnungsdaten übertragen</h3>
         <p>Daten aus Aufträgen wandern ohne Abtippen in Ihre Buchhaltung oder Tabellen. Tippfehler und vergessene Positionen entfallen.</p>
       </div>
-      <span class="beispiel-spart">1-3 Std./Woche</span>
+      <span class="spart-badge">1-3 Std./Woche</span>
     </li>
     <li class="beispiel-row reveal">
       <span class="beispiel-num">03</span>
@@ -404,7 +441,7 @@ footer a { color: var(--mut) }
         <h3>Wochenbericht ohne Schreibarbeit</h3>
         <p>Zahlen aus Ihren Systemen werden jeden Montag automatisch zu einem lesbaren Bericht zusammengefasst und an Sie oder Ihr Team geschickt.</p>
       </div>
-      <span class="beispiel-spart">1-2 Std./Woche</span>
+      <span class="spart-badge">1-2 Std./Woche</span>
     </li>
     <li class="beispiel-row reveal">
       <span class="beispiel-num">04</span>
@@ -412,7 +449,7 @@ footer a { color: var(--mut) }
         <h3>Posteingang-Triage mit KI</h3>
         <p>Ein KI-Agent liest eingehende Mails, beantwortet Routinefragen mit Ihren Vorgaben und legt nur die Fälle vor, die wirklich Ihre Entscheidung brauchen.</p>
       </div>
-      <span class="beispiel-spart">3-5 Std./Woche</span>
+      <span class="spart-badge">3-5 Std./Woche</span>
     </li>
   </ul>
 </section>
@@ -454,22 +491,22 @@ footer a { color: var(--mut) }
     <div class="preis-zeile">
       <h3>Automatisierungs-Check</h3>
       <p>Analyse Ihrer Abläufe und Werkzeuge, Report mit drei priorisierten Vorschlägen inkl. Ersparnis-Schätzung.</p>
-      <div class="preis-zahl">0 €<small>unverbindlich</small></div>
+      <div class="preis-zahl">0 &euro;<small>unverbindlich</small></div>
     </div>
     <div class="preis-zeile empfohlen">
       <h3>Workflow-Setup<span class="tag">meistgewählt</span></h3>
       <p>Eine Automatisierung, zwei bis drei verbundene Programme, getestet mit Ihren echten Daten, dokumentiert, 14 Tage Anpassungen inklusive.</p>
-      <div class="preis-zahl">ab 349 €<small>einmalig</small></div>
+      <div class="preis-zahl">ab 349 &euro;<small>einmalig</small></div>
     </div>
     <div class="preis-zeile">
       <h3>KI-Agent</h3>
       <p>Ein Agent, der mitliest, vorsortiert und formuliert: Posteingang-Triage, Recherche, Berichtswesen. Mit Freigabe-Stufen, die Sie festlegen.</p>
-      <div class="preis-zahl">ab 899 €<small>einmalig</small></div>
+      <div class="preis-zahl">ab 899 &euro;<small>einmalig</small></div>
     </div>
     <div class="preis-zeile">
       <h3>Betrieb &amp; Wartung</h3>
       <p>Überwachung, Fehlerbehebung und kleine Anpassungen. Ihre Automatisierung läuft auf Servern in Deutschland.</p>
-      <div class="preis-zahl">ab 49 €<small>pro Monat, kündbar</small></div>
+      <div class="preis-zahl">ab 49 &euro;<small>pro Monat, kündbar</small></div>
     </div>
   </div>
 </section>
@@ -478,7 +515,7 @@ footer a { color: var(--mut) }
   <h2>Warum Prochtec</h2>
   <div class="gruende">
     <div class="grund reveal">
-      <h3>Uber 1.000 anbindbare Programme</h3>
+      <h3>Über 1.000 anbindbare Programme</h3>
       <p>CRM, E-Mail, Kalender, Tabellen, Buchhaltung, Shops: wir verbinden, was Sie bereits nutzen, statt neue Software einzuführen.</p>
     </div>
     <div class="grund reveal">
@@ -504,7 +541,7 @@ footer a { color: var(--mut) }
   </details>
   <details>
     <summary>Welche Programme können angebunden werden?</summary>
-    <p>Uber 1.000, darunter Gmail und Outlook, Google Tabellen und Excel, HubSpot, Pipedrive, Lexoffice-Schnittstellen, Slack, Teams, Shopify und viele Branchenlösungen. Im Check prüfen wir Ihre konkrete Kombination.</p>
+    <p>Über 1.000, darunter Gmail und Outlook, Google Tabellen und Excel, HubSpot, Pipedrive, Lexoffice-Schnittstellen, Slack, Teams, Shopify und viele Branchenlösungen. Im Check prüfen wir Ihre konkrete Kombination.</p>
   </details>
   <details>
     <summary>Was passiert mit meinen Daten?</summary>
@@ -520,14 +557,16 @@ footer a { color: var(--mut) }
   </details>
 </section>
 
-<div class="kontakt" id="kontakt">
-  <h2>Starten Sie mit dem kostenlosen Check.</h2>
-  <p>Schreiben Sie zwei, drei Sätze zu Ihrem Betrieb und den Programmen, mit denen Sie arbeiten. Sie erhalten innerhalb von 48 Stunden Ihren persönlichen Automatisierungs-Report.</p>
-  <a class="btn" href="mailto:kontakt@prochtec.de?subject=Automatisierungs-Check&body=Unser%20Betrieb%3A%0AUnsere%20Programme%3A%0AWas%20zu%20viel%20Zeit%20kostet%3A">Check per E-Mail anfordern</a>
-  <p class="mail">Oder direkt an: <a href="mailto:kontakt@prochtec.de">kontakt@prochtec.de</a></p>
-</div>
-
 </main>
+
+<div class="kontakt-wrap">
+  <div class="kontakt" id="kontakt">
+    <h2>Drei Vorschläge in 48 Stunden. Kostenlos.</h2>
+    <p>Schreiben Sie zwei, drei Sätze zu Ihrem Betrieb und den Programmen, mit denen Sie arbeiten. Sie bekommen einen persönlichen Report mit konkreten Zeitersparnissen und einem Festpreis-Angebot.</p>
+    <a class="btn" href="mailto:kontakt@prochtec.de?subject=Automatisierungs-Check&body=Unser%20Betrieb%3A%0AUnsere%20Programme%3A%0AWas%20zu%20viel%20Zeit%20kostet%3A">Check per E-Mail anfordern</a>
+    <p class="mail">Oder direkt an: <a href="mailto:kontakt@prochtec.de">kontakt@prochtec.de</a></p>
+  </div>
+</div>
 
 <footer>
   <div>Prochtec Automatisierung</div>
@@ -542,7 +581,7 @@ const obs = new IntersectionObserver(
   { threshold: 0.08 }
 );
 document.querySelectorAll('.reveal').forEach((el, i) => {
-  el.style.transitionDelay = (i % 4 * 55) + 'ms';
+  el.style.transitionDelay = (i % 5 * 55) + 'ms';
   obs.observe(el);
 });
 </script>
